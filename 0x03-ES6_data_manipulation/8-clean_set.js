@@ -1,20 +1,17 @@
 export default function cleanSet(set, startString) {
-  if (
-    !set && !startString && !(set instanceof Set) && typeof startString !== 'string'
-  ) {
-    return '';
-  }
+  if (!startString) return ''; // Return empty string if startString is falsy
 
-  const parts = [];
+  const array = Array.from(set);
+  const sslength = startString.length;
 
-  for (const value of set.values()) {
-    if (typeof value === 'string' && value.startsWith(startString)) {
-      const valueSubStr = value.substring(startString.length);
-
-      if (valueSubStr && valueSubStr !== value) {
-        parts.push(valueSubStr);
-      }
+  // Use map to transform elements that start with startString
+  const cleanedArray = array.map((el) => {
+    if (el.startsWith(startString)) {
+      return el.substring(sslength);
     }
-  }
-  return parts.join('-');
+    return el; // Return original element if no change needed
+  });
+
+  // Join cleanedArray with '-' and return the result
+  return cleanedArray.join('-');
 }
