@@ -2,22 +2,39 @@
  * Represents a currency with a code and a name.
  */
 export default class Currency {
-  /**
-   * Creates an instance of Currency.
-   * @param {string} code - The code of the currency (e.g., USD, EUR).
-   * @param {string} name - The name of the currency (e.g., US Dollar, Euro).
-   */
   constructor(code, name) {
+    if (typeof code !== 'string') throw new TypeError('Code must be a string');
+    if (typeof name !== 'string') throw new TypeError('Name must be a string');
+
     this._code = code;
     this._name = name;
   }
 
-  /**
-   * Returns a string representation of the currency in the format:
-   * "Currency Name (Currency Code)"
-   * @returns {string} The full currency representation.
-   */
+  set code(value) {
+    if (typeof value !== 'string') {
+      throw new TypeError('Code must be a string');
+    } else {
+      this._code = value;
+    }
+  }
+
+  get name() {
+    return this._name;
+  }
+
+  set name(value) {
+    if (typeof value !== 'string') {
+      throw new TypeError('Name must be a string');
+    } else {
+      this._name = value;
+    }
+  }
+
   displayFullCurrency() {
     return `${this._name} (${this._code})`;
+  }
+
+  get code() {
+    return this._code;
   }
 }
