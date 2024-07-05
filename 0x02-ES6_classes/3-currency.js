@@ -1,40 +1,23 @@
-class Currency {
+/**
+ * Represents a currency with a code and a name.
+ */
+export default class Currency {
+  /**
+   * Creates an instance of Currency.
+   * @param {string} code - The code of the currency (e.g., USD, EUR).
+   * @param {string} name - The name of the currency (e.g., US Dollar, Euro).
+   */
   constructor(code, name) {
-    this.code = code;
-    this.name = name;
-  }
-
-  /**
-   * @param {String} code
-   */
-  set code(code) {
-    if (typeof code !== 'string') {
-      throw new TypeError('Code must be a String');
-    }
     this._code = code;
-  }
-
-  get code() {
-    return this._code;
-  }
-
-  /**
-   * @param {String} name
-   */
-  set name(name) {
-    if (typeof name !== 'string') {
-      throw new TypeError('Name must be a String');
-    }
     this._name = name;
   }
 
-  get name() {
-    return this._name;
-  }
-
+  /**
+   * Returns a string representation of the currency in the format:
+   * "Currency Name (Currency Code)"
+   * @returns {string} The full currency representation.
+   */
   displayFullCurrency() {
-    return `${this.name} (${this.code})`;
+    return `${this._name} (${this._code})`;
   }
 }
-
-export default Currency;
