@@ -22,23 +22,23 @@ export default class HolbertonCourse {
   // Setter methods
   set name(value) {
     if (typeof value !== 'string') {
-      throw new Error('Name should be a string!');
+      throw new TypeError('Name should be a string!');
     } else this._name = value;
   }
 
   set length(value) {
     if (typeof value !== 'number') {
-      throw new Error('length should be a number!');
+      throw new TypeError('length should be a number!');
     } else this._length = value;
   }
 
   set students(value) {
     if (!Array.isArray(value)) {
-      throw new Error('students should be an Array!');
+      throw new TypeError('students should be an Array!');
     } else {
       value.forEach((el) => {
         if (typeof el !== 'string') {
-          throw new Error('Each name should be a string!');
+          throw new TypeError('Each name should be a string!');
         }
       });
     }
