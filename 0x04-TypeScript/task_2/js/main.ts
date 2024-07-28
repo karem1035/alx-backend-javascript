@@ -36,3 +36,9 @@ function executeWork(employee: DirectorInterface | TeacherInterface): void {
     employee.workDirectorTasks();
   } else employee.workTeacherTasks();
 }
+
+type Subjects = 'Math' | 'History';
+
+function teachClass(todayClass: string): string {
+  return todayClass === 'Math' ? 'Teaching Math' : 'Teaching History';
+}
