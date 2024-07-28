@@ -26,3 +26,13 @@ function createEmployee(salary: number | string): Teacher | Director {
   if (typeof salary == 'number' && salary < 500) return new Teacher();
   else return new Director();
 }
+
+function isDirector(employee: any): employee is Director {
+  return (employee as Director) !== undefined;
+}
+
+function executeWork(employee: DirectorInterface | TeacherInterface): void {
+  if (isDirector(employee)) {
+    employee.workDirectorTasks();
+  } else employee.workTeacherTasks();
+}
