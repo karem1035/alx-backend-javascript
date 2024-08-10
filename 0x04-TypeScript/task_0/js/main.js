@@ -2,21 +2,21 @@ var karem = {
     firstName: 'Karem',
     lastName: 'Darwesh',
     age: 25,
-    location: 'Egypt',
+    location: 'Egypt'
 };
 var mohamed = {
     firstName: 'Mohamed',
     lastName: 'Sayed',
     age: 27,
-    location: 'Egypt',
+    location: 'Egypt'
 };
-var ahned = {
+var ahmed = {
     firstName: 'Ahmed',
     lastName: 'Tarek',
     age: 27,
-    location: 'Egypt',
+    location: 'Egypt'
 };
-var studentsList = [karem, mohamed, ahned];
+var studentsList = [karem, mohamed, ahmed];
 // Creating Table with Header Row
 var tableTag = document.createElement('table');
 var tableHead = document.createElement('tr');

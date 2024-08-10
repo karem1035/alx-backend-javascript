@@ -19,14 +19,14 @@ const mohamed: Student = {
   location: 'Egypt',
 };
 
-const ahned: Student = {
+const ahmed: Student = {
   firstName: 'Ahmed',
   lastName: 'Tarek',
   age: 27,
   location: 'Egypt',
 };
 
-const studentsList = [karem, mohamed, ahned];
+const studentsList = [karem, mohamed, ahmed];
 
 // Creating Table with Header Row
 const tableTag = document.createElement('table');
